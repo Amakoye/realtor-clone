@@ -7,6 +7,7 @@ import CrealeListing from "./pages/CrealeListing";
 import EditListing from "./pages/EditListing";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
+import Listing from "./pages/Listing";
 import Offers from "./pages/Offers";
 import Profile from "./pages/Profile";
 import Signin from "./pages/Signin";
@@ -23,6 +24,10 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="/offers" element={<Offers />} />
+          <Route
+            path="/category/:categoryName/:listingId"
+            element={<Listing />}
+          />
           <Route path="/create-listing" element={<PrivateRoute />}>
             <Route path="/create-listing" element={<CrealeListing />} />
           </Route>
