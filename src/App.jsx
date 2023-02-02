@@ -1,9 +1,10 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 import CrealeListing from "./pages/CrealeListing";
+import EditListing from "./pages/EditListing";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import Offers from "./pages/Offers";
@@ -24,6 +25,9 @@ const App = () => {
           <Route path="/offers" element={<Offers />} />
           <Route path="/create-listing" element={<PrivateRoute />}>
             <Route path="/create-listing" element={<CrealeListing />} />
+          </Route>
+          <Route path="/edit-listing" element={<PrivateRoute />}>
+            <Route path="/edit-listing/:listingId" element={<EditListing />} />
           </Route>
           <Route path="/sign-in" element={<Signin />} />
           <Route path="/sign-up" element={<Signup />} />
