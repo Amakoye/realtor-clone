@@ -156,7 +156,7 @@ function Listing() {
         </div>
         <div className="w-full h-[200px] md:h-[400px] z-10 overflow-x-hidden mt-6 md:mt-0 md:ml-2">
           <MapContainer
-            center={[listing.geolocation.lat, listing.geolocation.lng]}
+            center={[listing?.geolocation.lat, listing?.geolocation.lng]}
             zoom={13}
             scrollWheelZoom={false}
             style={{
@@ -169,11 +169,9 @@ function Listing() {
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker
-              position={[listing.geolocation.lat, listing.geolocation.lng]}
+              position={[listing?.geolocation.lat, listing?.geolocation.lng]}
             >
-              <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
+              <Popup>{listing?.address}</Popup>
             </Marker>
           </MapContainer>
         </div>
